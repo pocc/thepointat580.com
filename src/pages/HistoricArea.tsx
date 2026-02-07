@@ -1,4 +1,4 @@
-const historicImg = "/images/historic-point-richmond.jpg";
+import historicImg from "../assets/images/historic-point-richmond.jpg";
 
 export default function HistoricArea() {
   return (

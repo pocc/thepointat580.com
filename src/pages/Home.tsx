@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
-
-const aerialImg = "/images/richmond-aerial.jpg";
-const coupleImg = "/images/business-couple.jpg";
+import aerialImg from "../assets/images/richmond-aerial.jpg";
+import coupleImg from "../assets/images/business-couple.jpg";
 
 export default function Home() {
   return (
