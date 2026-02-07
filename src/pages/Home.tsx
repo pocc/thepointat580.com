@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
+import aerialImg from "../assets/images/richmond-aerial.jpg";
+import coupleImg from "../assets/images/business-couple.jpg";
 
 export default function Home() {
   return (
     <>
-      <section className="hero">
+      <section className="hero hero-with-bg">
+        <img
+          src={aerialImg}
+          alt="Aerial view of Richmond, California and San Francisco Bay"
+          className="hero-bg"
+        />
         <div className="hero-content">
           <h1>Welcome</h1>
           <p className="tagline">
@@ -39,16 +46,11 @@ export default function Home() {
               </p>
             </div>
             <div className="col">
-              <div className="info-card">
-                <h3>A Friendly Location</h3>
-                <p>
-                  Point Richmond is a charming neighborhood nestled between the
-                  hills and the bay, offering a unique blend of small-town
-                  character and urban convenience. With easy access to I-580 and
-                  I-80, it's perfectly positioned for commuters and businesses
-                  alike.
-                </p>
-              </div>
+              <img
+                src={coupleImg}
+                alt="Business professionals at The Point at 580"
+                className="section-img"
+              />
             </div>
           </div>
         </div>

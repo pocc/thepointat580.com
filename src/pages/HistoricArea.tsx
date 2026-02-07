@@ -1,3 +1,5 @@
+import historicImg from "../assets/images/historic-point-richmond.jpg";
+
 export default function HistoricArea() {
   return (
     <>
@@ -24,7 +26,12 @@ export default function HistoricArea() {
               </p>
             </div>
             <div className="col">
-              <div className="info-card">
+              <img
+                src={historicImg}
+                alt="Historic Point Richmond neighborhood in the early 1900s"
+                className="section-img"
+              />
+              <div className="info-card" style={{ marginTop: "1.5rem" }}>
                 <h3>Why Point Richmond?</h3>
                 <ul>
                   <li>Historic small-town character</li>

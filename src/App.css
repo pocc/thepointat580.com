@@ -147,6 +147,33 @@ main {
   text-align: center;
 }
 
+.hero-with-bg {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero-with-bg .hero-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(26, 42, 58, 0.7);
+  padding: 5rem 1.5rem;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .hero-content {
   max-width: 700px;
   margin: 0 auto;
@@ -179,13 +206,37 @@ main {
   text-align: center;
 }
 
-.page-header h1 {
+.page-header-with-bg {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+.page-header-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.page-header-content {
+  position: relative;
+  z-index: 1;
+  background: rgba(26, 42, 58, 0.65);
+  padding: 3.5rem 1.5rem;
+}
+
+.page-header h1,
+.page-header-content h1 {
   font-size: 2.5rem;
   font-weight: 700;
   margin-bottom: 0.75rem;
 }
 
-.page-header p {
+.page-header p,
+.page-header-content p {
   font-size: 1.15rem;
   opacity: 0.85;
   max-width: 600px;
@@ -222,6 +273,32 @@ main {
 .lead {
   font-size: 1.1rem;
   line-height: 1.7;
+}
+
+/* ── Section Images ────────────────────────────────────── */
+
+.section-img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* ── Property Photos ──────────────────────────────────── */
+
+.property-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.property-photo {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
 
 /* ── Two Column Layout ─────────────────────────────────── */
@@ -689,5 +766,14 @@ main {
 
   .attractions-grid {
     grid-template-columns: 1fr;
+  }
+
+  .property-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-with-bg .hero-content {
+    padding: 3.5rem 1.5rem;
+    min-height: 250px;
   }
 }

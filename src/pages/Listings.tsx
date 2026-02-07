@@ -1,15 +1,37 @@
 import { Link } from "react-router-dom";
+import streetImg from "../assets/images/street-view.jpg";
+import entranceImg from "../assets/images/building-entrance.jpg";
+import conferenceImg from "../assets/images/conference-room.jpg";
 
 export default function Listings() {
   return (
     <>
-      <section className="page-header">
-        <h1>Listings</h1>
-        <p>Current rental options at The Point at 580</p>
+      <section className="page-header page-header-with-bg">
+        <img
+          src={streetImg}
+          alt="Point Richmond storefronts and buildings on Tewksbury Avenue"
+          className="page-header-bg"
+        />
+        <div className="page-header-content">
+          <h1>Listings</h1>
+          <p>Current rental options at The Point at 580</p>
+        </div>
       </section>
 
       <section className="section">
         <div className="container">
+          <div className="property-photos">
+            <img
+              src={entranceImg}
+              alt="229 Tewksbury Avenue building entrance"
+              className="property-photo"
+            />
+            <img
+              src={conferenceImg}
+              alt="Conference room at The Point at 580"
+              className="property-photo"
+            />
+          </div>
           <div className="listings-grid">
             <div className="listing-card">
               <div className="listing-badge">Available</div>
