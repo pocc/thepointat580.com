@@ -16,6 +16,9 @@ function Layout({ children }: { children: React.ReactNode }) {
               227&ndash;249 Tewksbury Ave, Point Richmond, CA 94801
             </span>
           </NavLink>
+          <a href="tel:+15105901099" className="header-phone">
+            (510) 590-1099
+          </a>
           <nav className="main-nav">
             <NavLink to="/" end>
               Home
@@ -65,7 +68,7 @@ function Layout({ children }: { children: React.ReactNode }) {
             <p>
               Mon&ndash;Fri: 9 AM &ndash; 5 PM
               <br />
-              Sat: By appointment
+              Sat: 10 AM &ndash; 4 PM (appt)
               <br />
               Sun: Closed
             </p>

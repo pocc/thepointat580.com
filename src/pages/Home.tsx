@@ -58,6 +58,39 @@ export default function Home() {
 
       <section className="section section-alt">
         <div className="container">
+          <h2>About Us</h2>
+          <div className="two-col">
+            <div className="col">
+              <p>
+                We are glad to talk to you about your rental needs. We work
+                toward having long-term tenants and many have been with us for
+                several years or more. Since 1997, we have had our environmental
+                consulting practice on the property. We hope you will enjoy
+                working in Point Richmond as much as we have!
+              </p>
+              <p>
+                &mdash; Olivia and James Jacobs, Owners
+              </p>
+            </div>
+            <div className="col">
+              <div className="info-card">
+                <h3>Property Amenities</h3>
+                <ul>
+                  <li>Shared conference room</li>
+                  <li>Outdoor garden patio</li>
+                  <li>Kitchen</li>
+                  <li>Secured gated parking (commercial tenants)</li>
+                  <li>Pet-friendly</li>
+                  <li>Adjacent to I-580 on-ramp</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
           <h2>What We Offer</h2>
           <div className="card-grid">
             <div className="card">

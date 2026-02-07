@@ -52,6 +52,23 @@ export default function Listings() {
             </div>
 
             <div className="listing-card">
+              <div className="listing-badge">Available</div>
+              <h2>Conference Room</h2>
+              <div className="listing-price">
+                <span className="price">$29</span>
+                <span className="period">/hour</span>
+              </div>
+              <ul className="listing-features">
+                <li>Shared conference room</li>
+                <li>Available by reservation</li>
+                <li>Whiteboard and seating</li>
+              </ul>
+              <Link to="/contact" className="btn btn-primary">
+                Inquire Now
+              </Link>
+            </div>
+
+            <div className="listing-card">
               <div className="listing-badge badge-soon">Coming Soon</div>
               <h2>Storefront Offices</h2>
               <div className="listing-price">

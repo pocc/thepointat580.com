@@ -102,6 +102,18 @@ main {
   opacity: 0.7;
 }
 
+.header-phone {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
+.header-phone:hover {
+  color: #93b4d4;
+}
+
 .main-nav {
   display: flex;
   gap: 0.25rem;
@@ -644,23 +656,56 @@ main {
 
 /* ── Forms Page ────────────────────────────────────────── */
 
-.forms-placeholder {
-  max-width: 500px;
+.forms-list {
+  max-width: 700px;
   margin: 0 auto;
-  padding: 3rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
-.forms-icon {
-  font-size: 4rem;
-  margin-bottom: 1rem;
+.form-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  transition: box-shadow 0.2s;
 }
 
-.forms-placeholder h2 {
-  margin-bottom: 1rem;
+.form-item:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
 }
 
-.forms-placeholder p {
-  margin: 0 auto 1.5rem;
+.form-item-icon {
+  font-size: 1.75rem;
+  flex-shrink: 0;
+}
+
+.form-item-info {
+  flex: 1;
+}
+
+.form-item-info h3 {
+  font-size: 1rem;
+  color: #1a2a3a;
+  margin-bottom: 0.15rem;
+}
+
+.form-item-info p {
+  font-size: 0.85rem;
+  color: #888;
+  max-width: none;
+  margin-bottom: 0;
+}
+
+.form-item-status {
+  font-size: 0.8rem;
+  color: #2563a0;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 /* ── Footer ────────────────────────────────────────────── */

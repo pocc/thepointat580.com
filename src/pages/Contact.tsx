@@ -71,7 +71,7 @@ export default function Contact() {
                       </tr>
                       <tr>
                         <td>Saturday</td>
-                        <td>By appointment only</td>
+                        <td>10:00 AM &ndash; 4:00 PM (by appointment)</td>
                       </tr>
                       <tr>
                         <td>Sunday</td>

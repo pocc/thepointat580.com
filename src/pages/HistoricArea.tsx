@@ -19,10 +19,17 @@ export default function HistoricArea() {
                 neighbors, and a vibrant local culture.
               </p>
               <p>
+                The Point Richmond Historic District has been listed on the
+                National Register of Historic Places since 1978, recognizing
+                its architectural and cultural significance.
+              </p>
+              <p>
                 With easy freeway access via I-580 and I-80, Point Richmond
                 connects you to the greater Bay Area while maintaining its
                 small-town feel. San Rafael is about 10 minutes away, Berkeley 20
-                minutes, and Oakland 30 minutes.
+                minutes, and Oakland 30 minutes. Public transit is also
+                available via AC Transit line 72M and Golden Gate Transit
+                routes 42 and 40.
               </p>
             </div>
             <div className="col">
@@ -95,9 +102,9 @@ export default function HistoricArea() {
               <div className="attraction-icon">&#129406;</div>
               <h3>Hiking in the Neighborhood</h3>
               <p>
-                Miles of trails wind through the hills above Point Richmond,
-                offering breathtaking views of the bay, the bridges, and the
-                surrounding landscape.
+                Nicholl Knob and miles of trails wind through the hills above
+                Point Richmond, offering breathtaking views of the bay, the
+                bridges, and the surrounding landscape.
               </p>
             </div>
 
@@ -108,6 +115,24 @@ export default function HistoricArea() {
                 A historic indoor swimming pool and recreation facility that has
                 served the Point Richmond community for generations. Great for
                 swimming and fitness.
+              </p>
+            </div>
+
+            <div className="attraction-card">
+              <div className="attraction-icon">&#127958;</div>
+              <h3>Keller Beach</h3>
+              <p>
+                A sheltered sandy beach within Miller/Knox Regional Park, perfect
+                for a quick swim or a relaxing afternoon by the bay.
+              </p>
+            </div>
+
+            <div className="attraction-card">
+              <div className="attraction-icon">&#9961;</div>
+              <h3>Richmond Yacht Club</h3>
+              <p>
+                A community sailing hub on the Richmond shoreline, hosting
+                regattas and offering views of the San Francisco Bay.
               </p>
             </div>
           </div>
