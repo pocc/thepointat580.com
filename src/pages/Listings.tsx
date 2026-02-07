@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
-import streetImg from "../assets/images/street-view.jpg";
-import entranceImg from "../assets/images/building-entrance.jpg";
-import conferenceImg from "../assets/images/conference-room.jpg";
+
+const streetImg = "/images/street-view.jpg";
+const entranceImg = "/images/building-entrance.jpg";
+const conferenceImg = "/images/conference-room.jpg";
 
 export default function Listings() {
   return (
