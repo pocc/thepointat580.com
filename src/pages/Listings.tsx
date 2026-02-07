@@ -13,8 +13,8 @@ export default function Listings() {
           className="page-header-bg"
         />
         <div className="page-header-content">
-          <h1>Listings</h1>
-          <p>Current rental options at The Point at 580</p>
+          <h1>Available Spaces</h1>
+          <p>Office, storefront, and virtual office rentals in Point Richmond</p>
         </div>
       </section>
 

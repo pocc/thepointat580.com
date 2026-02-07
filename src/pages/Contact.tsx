@@ -14,11 +14,10 @@ export default function Contact() {
   return (
     <>
       <section className="page-header">
-        <h1>Call or Visit</h1>
+        <h1>Contact Us</h1>
         <p>
-          Need to lease an office, storefront, warehouse, virtual
-          office/mailbox or residential unit? Please contact us to see what is
-          available.
+          Interested in leasing a space or setting up a virtual office? We'd
+          love to hear from you.
         </p>
       </section>
 

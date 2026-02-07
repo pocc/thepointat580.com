@@ -81,3 +81,5 @@ python3 -m http.server 8080
 8. **Follow Vite conventions** — entry point is `src/index.html`, root mount in
    `src/main.tsx`.
 9. **Build output goes to `/demo`** (configured in `vite.config.ts`, git-ignored).
+
+- Do not include 'Co-Authored-By' trailers or any AI attribution in git commit messages.
