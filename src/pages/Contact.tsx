@@ -1,4 +1,6 @@
-import { useState, type FormEvent } from "react";
+import { useState, useEffect, type FormEvent } from "react";
+
+const EMAIL = "thepointat580@gmail.com";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -6,8 +8,21 @@ export default function Contact() {
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
+  useEffect(() => {
+    document.title = "Contact Us — The Point at 580";
+  }, []);
+
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
+
+    const subject = encodeURIComponent(
+      `Inquiry from ${name} — The Point at 580`,
+    );
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`,
+    );
+
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
     setSubmitted(true);
   }
 
@@ -41,6 +56,13 @@ export default function Contact() {
                   <h3>Phone</h3>
                   <p>
                     <a href="tel:+15105901099">(510) 590-1099</a>
+                  </p>
+                </div>
+
+                <div className="contact-item">
+                  <h3>Email</h3>
+                  <p>
+                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
                   </p>
                 </div>
 
@@ -88,7 +110,10 @@ export default function Contact() {
                 {submitted ? (
                   <div className="form-success">
                     <p>
-                      Thank you for your message! We'll get back to you soon.
+                      Your email client should have opened with your message.
+                      <br />
+                      If it didn't, you can email us directly at{" "}
+                      <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
                     </p>
                   </div>
                 ) : (
@@ -124,7 +149,7 @@ export default function Contact() {
                       />
                     </div>
                     <button type="submit" className="btn btn-primary">
-                      Send
+                      Send Message
                     </button>
                   </form>
                 )}

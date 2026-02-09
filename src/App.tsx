@@ -1,11 +1,61 @@
-import { HashRouter, Routes, Route, NavLink } from "react-router-dom";
+import { useState, useEffect } from "react";
+import {
+  HashRouter,
+  Routes,
+  Route,
+  NavLink,
+  Link,
+  useLocation,
+} from "react-router-dom";
 import Home from "./pages/Home";
 import Contact from "./pages/Contact";
 import Listings from "./pages/Listings";
 import HistoricArea from "./pages/HistoricArea";
 import Forms from "./pages/Forms";
 
+/* ── Scroll to top on every route change ──────────────── */
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
+/* ── 404 page ─────────────────────────────────────────── */
+function NotFound() {
+  useEffect(() => {
+    document.title = "Page Not Found — The Point at 580";
+  }, []);
+  return (
+    <section className="page-header" style={{ minHeight: "50vh", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center" }}>
+      <h1>404</h1>
+      <p style={{ marginBottom: "2rem" }}>Sorry, that page doesn't exist.</p>
+      <Link to="/" className="btn btn-primary">
+        Back to Home
+      </Link>
+    </section>
+  );
+}
+
+/* ── Layout shell (header + promo + footer) ───────────── */
 function Layout({ children }: { children: React.ReactNode }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const location = useLocation();
+
+  /* close mobile menu on navigation */
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  /* prevent body scroll when menu is open */
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <div className="site">
       <header className="site-header">
@@ -16,10 +66,23 @@ function Layout({ children }: { children: React.ReactNode }) {
               227&ndash;249 Tewksbury Ave, Point Richmond, CA 94801
             </span>
           </NavLink>
+
           <a href="tel:+15105901099" className="header-phone">
             (510) 590-1099
           </a>
-          <nav className="main-nav">
+
+          <button
+            className={`hamburger${menuOpen ? " open" : ""}`}
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label="Toggle navigation menu"
+            aria-expanded={menuOpen}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav className={`main-nav${menuOpen ? " nav-open" : ""}`}>
             <NavLink to="/" end>
               Home
             </NavLink>
@@ -30,6 +93,11 @@ function Layout({ children }: { children: React.ReactNode }) {
           </nav>
         </div>
       </header>
+
+      {/* backdrop for mobile menu */}
+      {menuOpen && (
+        <div className="nav-backdrop" onClick={() => setMenuOpen(false)} />
+      )}
 
       <div className="promo-banner">
         <span>
@@ -88,6 +156,7 @@ function Layout({ children }: { children: React.ReactNode }) {
 export default function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -95,6 +164,7 @@ export default function App() {
           <Route path="/listings" element={<Listings />} />
           <Route path="/historic-area" element={<HistoricArea />} />
           <Route path="/forms" element={<Forms />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Layout>
     </HashRouter>

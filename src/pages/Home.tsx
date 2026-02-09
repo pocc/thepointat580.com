@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import aerialImg from "../assets/images/richmond-aerial.jpg";
 import coupleImg from "../assets/images/business-couple.jpg";
 
 export default function Home() {
+  useEffect(() => {
+    document.title = "The Point at 580 — Office & Retail Rentals in Point Richmond";
+  }, []);
+
   return (
     <>
       <section className="hero hero-with-bg">

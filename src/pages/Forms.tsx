@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const forms = [
@@ -11,11 +12,15 @@ const forms = [
 ];
 
 export default function Forms() {
+  useEffect(() => {
+    document.title = "Forms — The Point at 580";
+  }, []);
+
   return (
     <>
       <section className="page-header">
         <h1>Forms</h1>
-        <p>Downloadable forms and documents</p>
+        <p>Rental forms and documents</p>
       </section>
 
       <section className="section">

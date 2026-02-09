@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import streetImg from "../assets/images/street-view.jpg";
 import entranceImg from "../assets/images/building-entrance.jpg";
 import conferenceImg from "../assets/images/conference-room.jpg";
 
 export default function Listings() {
+  useEffect(() => {
+    document.title = "Available Spaces — The Point at 580";
+  }, []);
+
   return (
     <>
       <section className="page-header page-header-with-bg">

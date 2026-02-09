@@ -1,6 +1,11 @@
+import { useEffect } from "react";
 import historicImg from "../assets/images/historic-point-richmond.jpg";
 
 export default function HistoricArea() {
+  useEffect(() => {
+    document.title = "Historic Point Richmond — The Point at 580";
+  }, []);
+
   return (
     <>
       <section className="page-header">
