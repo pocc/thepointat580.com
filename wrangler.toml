@@ -1,6 +1,15 @@
-# Cloudflare Pages configuration
 name = "thepointat580"
-pages_build_output_dir = "."
+main = "src/worker.ts"
+compatibility_date = "2025-01-01"
+account_id = "e7452b39fc737014144e3b3fca412900"
+
+[assets]
+directory = "./dist"
+binding = "ASSETS"
+
+[[routes]]
+pattern = "thepointat580.com"
+custom_domain = true
 
 [observability.logs]
 enabled = true

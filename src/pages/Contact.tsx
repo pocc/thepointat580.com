@@ -6,25 +6,31 @@ export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   useEffect(() => {
     document.title = "Contact Us — The Point at 580";
   }, []);
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
+    setStatus("sending");
 
-    const subject = encodeURIComponent(
-      `Inquiry from ${name} — The Point at 580`,
-    );
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\n\n${message}`,
-    );
-
-    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/thepointat580@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({ name, email, message, _subject: `Contact form: ${name}`, _replyto: email }),
+      });
+      const result = ((await res.json()) as { success: string });
+      if (result.success !== "true") throw new Error("Failed");
+      setStatus("sent");
+    } catch {
+      setStatus("error");
+    }
   }
+
+  const submitted = status === "sent";
 
   return (
     <>
@@ -109,12 +115,7 @@ export default function Contact() {
                 <h2>Send Us a Message</h2>
                 {submitted ? (
                   <div className="form-success">
-                    <p>
-                      Your email client should have opened with your message.
-                      <br />
-                      If it didn't, you can email us directly at{" "}
-                      <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
-                    </p>
+                    <p>Thank you! We'll be in touch shortly.</p>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit}>
@@ -148,8 +149,11 @@ export default function Contact() {
                         required
                       />
                     </div>
-                    <button type="submit" className="btn btn-primary">
-                      Send Message
+                    {status === "error" && (
+                      <p className="form-error">Something went wrong. Please try again.</p>
+                    )}
+                    <button type="submit" className="btn btn-primary" disabled={status === "sending"}>
+                      {status === "sending" ? "Sending..." : "Send Message"}
                     </button>
                   </form>
                 )}
