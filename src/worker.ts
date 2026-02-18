@@ -15,7 +15,7 @@ app.post("/api/contact", async (c) => {
     return c.json({ error: "All fields are required." }, 400);
   }
 
-  const res = await fetch("https://formsubmit.co/ajax/thepointat580@gmail.com", {
+  const res = await fetch("https://formsubmit.co/ajax/info@thepointat580.com", {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify({

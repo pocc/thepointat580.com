@@ -1,6 +1,6 @@
 import { useState, useEffect, type FormEvent } from "react";
 
-const EMAIL = "thepointat580@gmail.com";
+const EMAIL = "info@thepointat580.com";
 
 export default function Contact() {
   const [name, setName] = useState("");
@@ -17,7 +17,7 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const res = await fetch("https://formsubmit.co/ajax/thepointat580@gmail.com", {
+      const res = await fetch("https://formsubmit.co/ajax/info@thepointat580.com", {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ name, email, message, _subject: `Contact form: ${name}`, _replyto: email }),
